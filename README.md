@@ -1,5 +1,7 @@
 # RealWorld test automation
 
+[![Tests](https://github.com/rbhorvath/testautomation/actions/workflows/tests.yml/badge.svg)](https://github.com/rbhorvath/testautomation/actions/workflows/tests.yml)
+
 [Playwright](https://playwright.dev) UI and API tests for the [RealWorld](https://github.com/realworld-apps/realworld) (Conduit) demo app.
 
 | Target   | Default URL                     |

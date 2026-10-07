@@ -1,7 +1,7 @@
 {
   "name": "realworld-test-automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright UI and API test automation for the RealWorld (Conduit) demo app",
   "main": "index.js",
   "scripts": {
     "test": "playwright test --project=ui --project=api",
@@ -20,7 +20,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
