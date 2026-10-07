@@ -75,6 +75,16 @@ The shared demo backend differs from the spec in ways that shape these tests:
 - **No uniqueness or strength validation.** Duplicate usernames/emails, malformed emails and short passwords are accepted, although the spec documents `409` for conflicts.
 - **Sessions expire after a few minutes.**
 
+## Continuous integration
+
+[.github/workflows/tests.yml](.github/workflows/tests.yml) runs on pushes to `main`, pull requests, manual dispatch and nightly (06:00 UTC):
+
+- `quality`: typecheck, lint and format check.
+- `api` and `ui`: the API and Chromium UI suites, after `quality` passes.
+- `cross-browser`: Firefox, WebKit and the mobile viewport, only on the nightly run or manual dispatch.
+
+Each job uploads its HTML report as an artifact (14 days). CI retries failed tests twice. Each job runs on its own runner, so the per-client isolation of the demo backend keeps them apart.
+
 ## Tagging
 
 Tests tagged `@smoke` form a fast sanity subset. Add `{ tag: '@smoke' }` as the second argument of `test(...)`.

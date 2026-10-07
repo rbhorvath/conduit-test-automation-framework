@@ -12,7 +12,9 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   // The shared demo backend isolates data per client, so parallel workers interfere with each other.
   workers: Number(process.env.WORKERS ?? 1),
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: process.env.CI
+    ? [['github'], ['list'], ['html', { open: 'never' }]]
+    : [['list'], ['html', { open: 'never' }]],
   use: {
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
