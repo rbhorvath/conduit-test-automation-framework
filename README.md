@@ -1,6 +1,6 @@
-# RealWorld test automation
+# Conduit Test Automation Framework
 
-[![Tests](https://github.com/rbhorvath/testautomation/actions/workflows/tests.yml/badge.svg)](https://github.com/rbhorvath/testautomation/actions/workflows/tests.yml)
+[![Tests](https://github.com/rbhorvath/conduit-test-automation-framework/actions/workflows/tests.yml/badge.svg)](https://github.com/rbhorvath/conduit-test-automation-framework/actions/workflows/tests.yml)
 
 [Playwright](https://playwright.dev) UI and API tests for the [RealWorld](https://github.com/realworld-apps/realworld) (Conduit) demo app.
 
@@ -79,11 +79,11 @@ The shared demo backend differs from the spec in ways that shape these tests:
 
 ## Continuous integration
 
-[.github/workflows/tests.yml](.github/workflows/tests.yml) runs on pushes to `main`, pull requests, manual dispatch and nightly (06:00 UTC):
+[.github/workflows/tests.yml](.github/workflows/tests.yml) runs on pushes to `main`, pull requests, manual dispatch and daily (06:00 UTC):
 
 - `quality`: typecheck, lint and format check.
 - `api` and `ui`: the API and Chromium UI suites, after `quality` passes.
-- `cross-browser`: Firefox, WebKit and the mobile viewport, only on the nightly run or manual dispatch.
+- `cross-browser`: Firefox, WebKit and the mobile viewport, only on the daily scheduled run or manual dispatch.
 
 Each job uploads its HTML report as an artifact (14 days). CI retries failed tests twice. Each job runs on its own runner, so the per-client isolation of the demo backend keeps them apart.
 

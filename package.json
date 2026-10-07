@@ -1,7 +1,7 @@
 {
-  "name": "realworld-test-automation",
+  "name": "conduit-test-automation-framework",
   "version": "1.0.0",
-  "description": "Playwright UI and API test automation for the RealWorld (Conduit) demo app",
+  "description": "Playwright UI and API test automation framework for the Conduit (RealWorld) demo app",
   "main": "index.js",
   "scripts": {
     "test": "playwright test --project=ui --project=api",

@@ -6,7 +6,7 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    # Nightly run, including the cross-browser matrix.
+    # Daily run at 06:00 UTC (03:00 in Brazil), including the cross-browser matrix.
     - cron: '0 6 * * *'
 
 concurrency:
